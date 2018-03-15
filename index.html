@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>Health Center Helper</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel='stylesheet' href='style.css'/>
+    <link rel='stylesheet' href='form.css'/>
+    <link rel='stylesheet' href='arrow-styling.css'/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	 <script src="chat.js"></script>
+	 <script>
+	 	function disable_email() {
+	 		var element = document.getElementById("emailtext")
+	 		if (element.classList) { 
+			    element.classList.toggle("disabled");
+			} else {
+			    // For IE9
+			    var classes = element.className.split(" ");
+			    var i = classes.indexOf("disabled");
+
+			    if (i >= 0) 
+			        classes.splice(i, 1);
+			    else 
+			        classes.push("disabled");
+			        element.className = classes.join(" "); 
+			}
+	 	}
+	 </script>
+  </head>
+  <body>
+    <div class='page'>
+		<div class='section menu center'>
+			<span>Get Help</span>
+		</div>
+
+		<div class='section header center'>
+		  	<div class='text-column'>
+		  		<h1>HEALTH CENTER <br>KEEPING YOU <br>WAITING?</h1>
+		  		<br>
+		  		<h3>Talk with a doctor now to determine <br> if it’s worth your time to wait <br> for your appointment. </h3> 
+		  	</div>
+		 	<section id="section05" class="demo">
+  				<a href="#form"><span></span></a>
+			</section>
+	 	</div>
+
+	  	<div id="form" class='section content'>
+		    <div class="details">
+				<ul class="messages">
+				</ul>
+				<div class="message_template">
+					<li class="message appeared">
+						<div class="avatar">
+						</div>
+						<div class="text_wrapper">
+							<div class="text">
+							</div>
+						</div>
+					</li>
+				</div>
+		    	<form action="results.html" class="questions">
+
+				    <label for="symptoms">What are you experiencing?</label>
+				    <input class="def_input" type="text" id="symptoms" name="symptoms" placeholder="Symptoms.."><br>
+
+				    <label for="timeline">How long has this been going on?</label>
+				    <input class="def_input" type="text" id="timeline" name="timeline" placeholder="Timeline.."><br>
+
+				    <label for="waittime">How long will it take to see a doctor at your school?</label>
+				    <input class="def_input" type="text" id="waittime" name="waittime" placeholder="Estimated wait time..">
+				    <br>
+  					<label>Can we check-back in with you soon to ensure that you've received proper treatment?</label>
+  					<input type="checkbox" name="canEmail" value="emailyes" checked onclick="disable_email()"><br>
+
+  					<input type="text" id="emailtext" name="email" placeholder="Email" class="email-form"><br>
+
+				    <input type="submit" value="Send Details">
+
+				</form>
+	        </div>
+
+        </div>
+
+	</div>
+  </body>
+</html>
